@@ -57,7 +57,7 @@ const tiers = [
 export default function Pricing() {
   return (
     <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-6 lg:py-8 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-500/50 text-white rounded-md lg:rounded-lg">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-6 lg:py-8 rounded-md lg:rounded-lg">
         <div className="mx-auto max-w-2xl text-center bg-transparent">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             Simple, transparent pricing
@@ -78,7 +78,7 @@ export default function Pricing() {
                 <div className="flex items-center justify-between gap-x-4">
                   <h3
                     className={`text-lg font-semibold leading-8 ${
-                      tier.mostPopular ? "text-primary" : ""
+                      tier.mostPopular ? "text-accent" : ""
                     }`}
                   >
                     {tier.name}
@@ -89,14 +89,18 @@ export default function Pricing() {
                     </p>
                   ) : null}
                 </div>
-                <p className="mt-4 text-sm leading-6">
-                  {tier.description}
-                </p>
+                <p className="mt-4 text-sm leading-6">{tier.description}</p>
                 <div className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-bold tracking-tight">
+                  <span
+                    className={`text-4xl font-bold tracking-tight ${
+                      tier.mostPopular ? "text-accent" : ""
+                    }`}
+                  >
                     {tier.price.monthly}
                   </span>
-                  <span className="text-sm font-semibold leading-6">
+                  <span className={`text-sm font-semibold leading-6 ${
+                      tier.mostPopular ? "text-accent" : ""
+                    }`}>
                     /month
                   </span>
                 </div>
@@ -118,16 +122,13 @@ export default function Pricing() {
                     className={`w-full rounded-full ${
                       tier.mostPopular
                         ? "bg-accent hover:bg-accent/90 text-accent-foreground orange-glow"
-                        : "border-accent/30 hover:bg-accent/10 text-accent"
+                        : "border-accent/30 hover:bg-accent/10 text-accent hover:text-primary"
                     }`}
                   >
                     {tier.cta}
                   </Button>
                 </Link>
-                <ul
-                  role="list"
-                  className="mt-8 space-y-3 text-sm leading-6"
-                >
+                <ul role="list" className="mt-8 space-y-3 text-sm leading-6">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <CheckCircle
@@ -157,7 +158,7 @@ export default function Pricing() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-accent/30 text-accent hover:bg-accent/10"
+                className="border-accent/30 text-accent hover:text-primary hover:bg-accent/10"
               >
                 View all FAQs
               </Button>

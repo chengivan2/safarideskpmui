@@ -5,12 +5,12 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 8%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.21 83.19 53.33;
+    --primary: 0 0% 5%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,13 +27,13 @@
   }
 
   .dark {
-    --background: 222 85% 5%;
+    --background: 0 0% 9%;
     --foreground: 210 40% 98%;
     --card: 222 85% 5%;
     --card-foreground: 210 40% 98%;
     --popover: 222 85% 5%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 0, 0%, 96%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 12%;
     --secondary-foreground: 210 40% 98%;
@@ -63,23 +63,13 @@ body:has(.fixed.inset-0.z-50) {
   overflow: hidden;
 }
 
-.hero-gradient {
-  background: radial-gradient(circle at 10% 20%, rgba(221, 232, 253, 0.7) 0%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(circle at 90% 20%, rgba(255, 236, 210, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
-}
-
-.dark .hero-gradient {
-  background: radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.3) 0%, rgba(0, 0, 0, 0) 60%),
-    radial-gradient(circle at 90% 20%, rgba(120, 53, 15, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
-}
-
 .feature-gradient {
-  background: linear-gradient(to bottom right, rgba(221, 232, 253, 0.5), rgba(255, 255, 255, 0));
+  background: linear-gradient(to bottom right, rgba(255, 159, 0, 0.1), rgba(255, 255, 255, 0));
   border: 1px solid rgba(255, 159, 0, 0.1);
 }
 
 .dark .feature-gradient {
-  background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom right, rgba(255, 159, 0, 0.2), rgba(0, 0, 0, 0));
   border: 1px solid rgba(255, 159, 0, 0.2);
 }
 

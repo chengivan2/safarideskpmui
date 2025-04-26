@@ -62,7 +62,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 sm:py-32 hero-gradient">
+      <section className="relative overflow-hidden py-20 sm:py-32 bg-background">
         <div className="absolute top-20 left-20 h-4 w-4 rounded-full bg-blue-500 animate-float-slow" />
         <div className="absolute top-40 right-40 h-4 w-4 rounded-full bg-red-500 animate-float-medium" />
         <div className="absolute bottom-20 left-1/4 h-4 w-4 rounded-full bg-orange-500 animate-float-fast" />
@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-16 flow-root sm:mt-24">
-            <div className="relative rounded-xl bg-white p-2 shadow-xl shadow-blue-600 ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
+            <div className="relative rounded-xl bg-white p-2 shadow-xl shadow-accent ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
               <Image
                 src="/placeholder.svg?height=600&width=1200"
                 alt="Dashboard screenshot"
@@ -110,7 +110,7 @@ export default function HomePage() {
       
 
       {/* Features Section */}
-      <section className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-base font-semibold leading-7 text-primary">Features</h2>
@@ -143,7 +143,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gray-50 py-24 sm:py-32 dark:bg-gray-900">
+      <section className="py-24 sm:py-32 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-base font-semibold leading-7 text-primary">Testimonials</h2>
@@ -153,7 +153,7 @@ export default function HomePage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-between rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200 dark:bg-gray-800 dark:ring-gray-700"
+                className="flex flex-col justify-between rounded-2xl p-8 shadow-sm shadow-accent/50 ring-1 ring-accent/20 dark:ring-accent/30"
               >
                 <div>
                   <div className="flex gap-x-1">

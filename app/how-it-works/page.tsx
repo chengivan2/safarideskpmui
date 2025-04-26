@@ -81,7 +81,7 @@ export default function HowItWorks() {
 
         <div className="relative mt-16 sm:mt-20 lg:mt-24">
           {/* Vertical line connecting all steps */}
-          <div className="absolute left-1/2 top-0 bottom-0 -ml-px w-0.5 bg-gradient-to-b from-primary/60 to-accent/60 hidden md:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 -ml-px w-0.5 bg-gradient-to-b from-primary/60 dark:from-white/60 dark:to-accent/60 to-accent/60 hidden md:block" />
 
           {steps.map((step, index) => (
             <div key={step.number} className="relative mb-24 last:mb-0">
@@ -116,7 +116,7 @@ export default function HowItWorks() {
                 >
                   {/* Number dot on the line - visible on md and up */}
                   <div
-                    className={`absolute hidden md:flex items-center justify-center top-0 w-12 h-12 rounded-full bg-primary text-white font-bold text-xl shadow-lg orange-glow z-10 ${
+                    className={`absolute hidden md:flex items-center justify-center top-0 w-12 h-12 rounded-full bg-accent dark:bg-accent text-white font-bold text-xl shadow-lg orange-glow z-10 ${
                       step.align === "left" ? "right-0" : "left-0"
                     }`}
                   >
@@ -125,7 +125,7 @@ export default function HowItWorks() {
 
                   {/* Mobile number - visible below md */}
                   <div className="flex md:hidden items-center gap-4 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg shadow-md">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent dark:bg-accent text-white font-bold text-lg shadow-md">
                       {step.number}
                     </div>
                     <h2 className="text-2xl font-bold">{step.title}</h2>

@@ -1,57 +1,57 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import Logo from "@/components/logo"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import Logo from "@/components/logo";
 
 const navigation = [
   { name: "Features", href: "/features" },
   { name: "Pricing", href: "/pricing" },
   { name: "FAQs", href: "/faqs" },
   { name: "How It Works", href: "/how-it-works" },
-]
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
-  const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [visible, setVisible] = useState(true)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY
-      const isScrollingDown = prevScrollPos < currentScrollPos
+      const currentScrollPos = window.scrollY;
+      const isScrollingDown = prevScrollPos < currentScrollPos;
 
       // Only hide header when scrolling down and not at the top of the page
-      setVisible(!isScrollingDown || currentScrollPos < 10)
-      setPrevScrollPos(currentScrollPos)
-    }
+      setVisible(!isScrollingDown || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [prevScrollPos])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = ""
-    }
-  }, [mobileMenuOpen])
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 shadow-[0_4px_10px_rgba(59,130,246,0.1)] dark:shadow-[0_4px_10px_rgba(59,130,246,0.2)] ${
+        className={`sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 shadow-[0_4px_10px_rgba(255,159,0,0.2)] dark:shadow-[0_4px_10px_rgba(255,159,0,0.1)] ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -82,8 +82,8 @@ export default function Header() {
                 href={item.href}
                 className={`text-sm font-semibold leading-6 transition-colors ${
                   pathname === item.href
-                    ? "text-primary"
-                    : "text-gray-900 hover:text-primary dark:text-gray-100 dark:hover:text-primary"
+                    ? "text-accent/90"
+                    : "text-gray-900 hover:text-accent dark:text-gray-100 dark:hover:text-accent"
                 }`}
               >
                 {item.name}
@@ -93,7 +93,10 @@ export default function Header() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
             <ThemeToggle />
             <Link href="/sign-in">
-              <Button variant="ghost" className="text-sm font-semibold leading-6">
+              <Button
+                variant="ghost"
+                className="text-sm font-semibold leading-6"
+              >
                 Sign in
               </Button>
             </Link>
@@ -118,7 +121,11 @@ export default function Header() {
           {/* Menu panel */}
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span className="sr-only">SafariDesk PM</span>
                 <Logo className="h-8 w-auto" />
               </Link>
@@ -140,19 +147,21 @@ export default function Header() {
                       href={item.href}
                       className={`-mx-3 block rounded-lg px-3 py-3 text-base font-semibold leading-7 ${
                         pathname === item.href
-                          ? "text-primary"
-                          : "text-gray-900 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-800"
+                          ? "text-accent/90"
+                          : "text-gray-900 hover:text-accent dark:text-gray-100"
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.name}
+                      <span className="hover:text-accent">{item.name}</span>
                     </Link>
                   ))}
                 </div>
                 <div className="py-6">
                   <div className="flex items-center gap-x-4 mb-6">
                     <ThemeToggle />
-                    <span className="text-sm text-gray-500 dark:text-gray-400">Toggle theme</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      Toggle theme
+                    </span>
                   </div>
                   <Link
                     href="/sign-in"
@@ -175,5 +184,5 @@ export default function Header() {
         </div>
       )}
     </>
-  )
+  );
 }

@@ -99,7 +99,7 @@ export default function FAQs() {
               </Button>
             </Link>
             <Link href="/request-demo">
-              <Button variant="outline" size="lg" className="border-accent/30 text-accent hover:bg-accent/10">
+              <Button variant="outline" size="lg" className="border-accent/30 text-accent hover:text-primary hover:bg-accent/10">
                 Request a Demo
               </Button>
             </Link>
