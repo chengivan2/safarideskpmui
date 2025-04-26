@@ -31,13 +31,13 @@ export function ThemeToggle() {
     <Button
       size="icon"
       onClick={toggleTheme}
-      className="border border-primary/20 dark:border-accent/20 bg-transparent hover:bg-accent/20 dark:hover:bg-primary/20"
+      className="border border-primary/20 dark:border-accent/20 bg-transparent hover:bg-accent/20"
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       {theme === "dark" ? (
-      <Sun className="h-[1.2rem] w-[1.2rem] text-accent hover:text-primary" />
+      <Sun className="h-[1.2rem] w-[1.2rem] text-accent" />
       ) : (
-      <Moon className="h-[1.2rem] w-[1.2rem] text-primary hover:text-primary" />
+      <Moon className="h-[1.2rem] w-[1.2rem] text-accent" />
       )}
     </Button>
   )
