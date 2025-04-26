@@ -49,7 +49,7 @@ export default function RequestDemo() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-5xl rounded-xl bg-white dark:bg-gray-900 shadow-lg ring-1 ring-gray-200 dark:ring-gray-800 sm:mt-20 lg:flex">
+        <div className="mx-auto mt-16 max-w-5xl rounded-xl bg-transparent shadow-sm ring-1 ring-primary dark:ring-accent sm:mt-20 lg:flex">
           {/* Left side - Form */}
           <div className="p-8 sm:p-10 lg:flex-auto">
             {submitted ? (
@@ -87,7 +87,7 @@ export default function RequestDemo() {
                         id="firstName"
                         name="firstName"
                         placeholder="John"
-                        className="pl-10"
+                        className="pl-10 border-primary/30"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
@@ -100,6 +100,7 @@ export default function RequestDemo() {
                       id="lastName"
                       name="lastName"
                       placeholder="Doe"
+                      className="border-primary/30"
                       value={formData.lastName}
                       onChange={handleChange}
                       required
@@ -114,7 +115,7 @@ export default function RequestDemo() {
                         name="email"
                         type="email"
                         placeholder="name@example.com"
-                        className="pl-10"
+                        className="pl-10 border-primary/30"
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -130,7 +131,7 @@ export default function RequestDemo() {
                         name="phone"
                         type="tel"
                         placeholder="(123) 456-7890"
-                        className="pl-10"
+                        className="pl-10 border-primary/30"
                         value={formData.phone}
                         onChange={handleChange}
                       />
@@ -144,7 +145,7 @@ export default function RequestDemo() {
                         id="companyName"
                         name="companyName"
                         placeholder="Your company"
-                        className="pl-10"
+                        className="pl-10 border-primary/30"
                         value={formData.companyName}
                         onChange={handleChange}
                         required
@@ -157,7 +158,7 @@ export default function RequestDemo() {
                       value={formData.propertySize}
                       onValueChange={(value) => setFormData((prev) => ({ ...prev, propertySize: value }))}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="border-primary/30">
                         <SelectValue placeholder="Select property size" />
                       </SelectTrigger>
                       <SelectContent>
@@ -177,7 +178,7 @@ export default function RequestDemo() {
                         id="preferredDate"
                         name="preferredDate"
                         type="date"
-                        className="pl-10"
+                        className="pl-10 border-primary/30"
                         value={formData.preferredDate}
                         onChange={handleChange}
                       />
@@ -189,6 +190,7 @@ export default function RequestDemo() {
                       id="message"
                       name="message"
                       placeholder="Tell us about your specific needs or questions"
+                      className="border-primary/30"
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
@@ -221,13 +223,13 @@ export default function RequestDemo() {
           </div>
 
           {/* Right side - Image */}
-          <div className="lg:flex lg:w-1/3 lg:flex-shrink-0">
+          <div className="hiddenlg:flex lg:w-1/3 lg:flex-shrink-0">
             <div className="relative h-full w-full">
               <Image
                 src="/stockimages/scarfhouse.jpg"
                 alt="Property Management Demo"
                 fill
-                className="object-cover"
+                className="object-cover rounded-tr-xl rounded-br-xl"
               />
               <div className="absolute inset-0 bg-primary/30 flex flex-col items-center justify-center text-white p-6">
                 <div className="max-w-xs text-center">
