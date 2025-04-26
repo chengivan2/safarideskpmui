@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 shadow-[0_4px_10px_rgba(255,159,0,0.2)] dark:shadow-[0_4px_10px_rgba(255,159,0,0.1)] ${
+        className={`sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 shadow-[0_4px_10px_rgba(255,159,0,0.2)] dark:shadow-[0_4px_10px_rgba(255,159,0,0.1)] ${
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
