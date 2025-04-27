@@ -123,7 +123,7 @@ export default function HomePage() {
               alt="Dashboard screenshot"
               width={1100}
               height={300}
-              className="h-[50vh] w-[90vw] lg:h-[110vh] rounded-md"
+              className="h-[50vh] w-[90vw] lg:h-[110vh] rounded-lg"
             />
           
         </div>
