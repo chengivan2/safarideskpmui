@@ -70,7 +70,9 @@ export default function HomePage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-primary">
+            <h1
+              className="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-b from-gray-100 via-gray-400 to-gray-900 bg-clip-text text-transparent"
+            >
               Property Management Software Made Easy
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -93,7 +95,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-16 flow-root sm:mt-24">
-            <div className="relative rounded-xl bg-white p-2 shadow-xl shadow-accent ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
+            <div className="relative rounded-xl bg-white p-2 ring-1 ring-gray-900/10 dark:bg-gray-900 dark:ring-white/10">
               <Image
                 src="/placeholder.svg?height=600&width=1200"
                 alt="Dashboard screenshot"
@@ -101,7 +103,8 @@ export default function HomePage() {
                 height={600}
                 className="rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
               />
-              <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 dark:ring-white/10" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-accent opacity-50 rounded-xl" />
+              
             </div>
           </div>
         </div>
@@ -110,14 +113,14 @@ export default function HomePage() {
       
 
       {/* Features Section */}
-      <section className="py-24 sm:py-32 bg-background">
+      <section className="py-24 lg:py-12 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary">Features</h2>
+            <h2 className="text-base font-semibold leading-7 text-accent">Features</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
               Everything you need to manage your properties
             </p>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-primary/80">
               Our comprehensive suite of tools helps you streamline operations, reduce costs, and improve tenant
               satisfaction.
             </p>
@@ -132,7 +135,7 @@ export default function HomePage() {
                     </div>
                     {feature.name}
                   </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
+                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-primary/80">
                     <p className="flex-auto">{feature.description}</p>
                   </dd>
                 </div>
@@ -143,23 +146,23 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 sm:py-32 bg-background">
+      <section className="py-24 lg:py-12 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary">Testimonials</h2>
+            <h2 className="text-base font-semibold leading-7 text-accent">Testimonials</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Hear what our customers have to say</p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <div
+                <div
                 key={index}
-                className="flex flex-col justify-between rounded-2xl p-8 shadow-sm shadow-accent/50 ring-1 ring-accent/20 dark:ring-accent/30"
-              >
+                className="flex flex-col justify-between rounded-2xl p-8 ring-1 ring-accent/20 bg-gradient-to-br from-accent/10 via-transparent to-accent/10"
+                >
                 <div>
                   <div className="flex gap-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} className="h-5 w-5 text-accent" />
-                    ))}
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="h-5 w-5 text-accent" />
+                  ))}
                   </div>
                   <div className="mt-6 text-lg font-semibold leading-8">"{testimonial.content}"</div>
                 </div>
@@ -167,7 +170,7 @@ export default function HomePage() {
                   <div className="text-base font-semibold">{testimonial.author}</div>
                   <div className="mt-1 text-sm text-muted-foreground">{testimonial.role}</div>
                 </div>
-              </div>
+                </div>
             ))}
           </div>
         </div>
@@ -196,9 +199,9 @@ export default function HomePage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-full border-accent/30 text-accent hover:bg-accent/10"
+                  className="rounded-full border-accent/30 hover:bg-accent/10"
                 >
-                  View Pricing
+                  <span className="text-accent">View Pricing</span>
                 </Button>
               </Link>
             </div>

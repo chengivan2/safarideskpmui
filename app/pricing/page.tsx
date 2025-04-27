@@ -71,37 +71,43 @@ export default function Pricing() {
         <div className="mt-16 flex justify-center">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {tiers.map((tier) => (
-              <div
+                <div
                 key={tier.id}
-                className={`flex flex-col rounded-3xl p-8 ring-1 ring-gray-200 dark:ring-gray-700 xl:p-10 backdrop-blur-lg bg-primary-5/10`}
-              >
+                className={`flex flex-col rounded-3xl p-8 ring-1 ring-accent/50 xl:p-10 backdrop-blur-lg ${
+                  tier.mostPopular
+                  ? "bg-gradient-to-tr from-accent/60 to-accent/50 dark:from-accent/70 dark:to-accent/50"
+                  : "bg-gradient-to-br from-accent/30 to-accent/10 dark:from-accent/20 dark:to-accent/10"
+                }`}
+                >
                 <div className="flex items-center justify-between gap-x-4">
                   <h3
-                    className={`text-lg font-semibold leading-8 ${
-                      tier.mostPopular ? "text-accent" : ""
-                    }`}
+                  className={`text-lg font-semibold leading-8 ${
+                    tier.mostPopular ? "text-accent-foreground" : ""
+                  }`}
                   >
-                    {tier.name}
+                  {tier.name}
                   </h3>
                   {tier.mostPopular ? (
-                    <p className="rounded-full bg-accent/80 px-2.5 py-1 text-xs font-semibold leading-5">
-                      Most popular
-                    </p>
+                  <p className="rounded-full bg-accent/80 px-2.5 py-1 text-xs font-semibold leading-5">
+                    Most popular
+                  </p>
                   ) : null}
                 </div>
                 <p className="mt-4 text-sm leading-6">{tier.description}</p>
                 <div className="mt-6 flex items-baseline gap-x-1">
                   <span
-                    className={`text-4xl font-bold tracking-tight ${
-                      tier.mostPopular ? "text-accent" : ""
-                    }`}
+                  className={`text-4xl font-bold tracking-tight ${
+                    tier.mostPopular ? "text-accent-foreground" : ""
+                  }`}
                   >
-                    {tier.price.monthly}
+                  {tier.price.monthly}
                   </span>
-                  <span className={`text-sm font-semibold leading-6 ${
-                      tier.mostPopular ? "text-accent" : ""
-                    }`}>
-                    /month
+                  <span
+                  className={`text-sm font-semibold leading-6 ${
+                    tier.mostPopular ? "text-accent-foreground" : ""
+                  }`}
+                  >
+                  /month
                   </span>
                 </div>
                 {/* <p className="mt-1 text-sm leading-6 text-muted-foreground">
@@ -109,37 +115,37 @@ export default function Pricing() {
                 </p> */}
                 <Link
                   href={
-                    tier.mostPopular
-                      ? "/sign-up"
-                      : tier.name === "Enterprise"
-                      ? "/contact"
-                      : "/sign-up"
+                  tier.mostPopular
+                    ? "/sign-up"
+                    : tier.name === "Enterprise"
+                    ? "/contact"
+                    : "/sign-up"
                   }
                   className="mt-6"
                 >
                   <Button
-                    variant={tier.mostPopular ? "default" : "outline"}
-                    className={`w-full rounded-full ${
-                      tier.mostPopular
-                        ? "bg-accent hover:bg-accent/90 text-accent-foreground orange-glow"
-                        : "border-accent/30 hover:bg-accent/10 text-accent hover:text-primary"
-                    }`}
+                  variant={tier.mostPopular ? "default" : "outline"}
+                  className={`w-full rounded-full ${
+                    tier.mostPopular
+                    ? "bg-accent hover:bg-primary text-accent-foreground orange-glow"
+                    : "border-accent/30 hover:bg-accent/10 text-accent hover:text-primary"
+                  }`}
                   >
-                    {tier.cta}
+                  {tier.cta}
                   </Button>
                 </Link>
                 <ul role="list" className="mt-8 space-y-3 text-sm leading-6">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckCircle
-                        className="h-5 w-5 flex-none text-accent"
-                        aria-hidden="true"
-                      />
-                      {feature}
-                    </li>
+                  <li key={feature} className="flex gap-x-3">
+                    <CheckCircle
+                    className="h-5 w-5 flex-none text-accent"
+                    aria-hidden="true"
+                    />
+                    {feature}
+                  </li>
                   ))}
                 </ul>
-              </div>
+                </div>
             ))}
           </div>
         </div>
