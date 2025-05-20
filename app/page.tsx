@@ -94,10 +94,10 @@ export default function HomePage() {
               countries.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link href="/request-demo">
+              <Link href="/request-demo" className="cursor-pointer">
                 <Button
                   size="lg"
-                  className="rounded-full bg-accent hover:bg-accent/90 text-accent-foreground orange-glow"
+                  className="cursor-pointer rounded-full bg-accent hover:bg-accent/80 text-accent-foreground orange-glow"
                 >
                   Request a Demo
                 </Button>

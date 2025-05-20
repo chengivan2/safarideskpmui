@@ -1,16 +1,24 @@
-import { Building } from "lucide-react"
-
+import Image from "next/image";
 interface LogoProps {
-  className?: string
+  className?: string;
 }
 
 export default function Logo({ className }: LogoProps) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-white">
-        <Building className="h-5 w-5" />
-      </div>
-      <span className="font-bold text-xl text-primary">SafariDesk PM</span>
+      <Image
+        src="/logos/safarideskpmlogo.png"
+        alt="SafariDesk PM Logo"
+        width={40}
+        height={40}
+        className="rounded-sm"
+      />
+
+      <span
+        className="font-bold text-3xl bg-gradient-to-r from-[#286fab] via-[#286fab] to-[#f69322] bg-clip-text text-transparent"
+      >
+        SafariDesk PM
+      </span>
     </div>
-  )
+  );
 }

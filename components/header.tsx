@@ -62,7 +62,7 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">SafariDesk PM</span>
-              <Logo className="h-8 w-auto" />
+              <Logo className="w-auto" />
             </Link>
           </div>
           <div className="flex lg:hidden">
